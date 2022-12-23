@@ -1,0 +1,19 @@
+<!-- <p>editbuddy works!</p> -->
+
+<div *ngIf="buddy" class="create">
+    <div class="prop">
+        Priority:
+        <input [(ngModel)]="buddy.priority" placeholder="Priority"/>
+    </div>
+    <div class="prop">
+        Task:
+        <input [(ngModel)]="buddy.task" placeholder="Task"/>
+    </div>
+    <div class="prop">
+        DueDate:
+        <input [(ngModel)]="buddy.dueDate" placeholder="(Month dd, YYYY)"/>
+    </div>
+    <button (click)="updateBuddy(buddy)" *ngIf="buddy.id">Update</button>
+    <button (click)="deleteBuddy(buddy)" *ngIf="buddy.id">Delete</button>
+    <button (click)="createBuddy(buddy)" *ngIf="!buddy.id">Create</button>
+</div>

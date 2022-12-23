@@ -1,0 +1,22 @@
+<button (click)="initNewBuddy()">Create New Buddy</button>
+
+<table>
+  <thead>
+    <th>Priority</th>
+    <th>Task</th>
+    <th>SetDate</th>
+    <th>DueDate</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let buddy of buddies">
+      <td>{{ buddy.priority}}</td>
+      <td>{{ buddy.task}}</td>
+      <td>{{ buddy.setDate | date:'mediumDate'}}</td>
+      <td>{{ buddy.dueDate}}</td>
+      <td><button (click)="editBuddy(buddy)">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<app-editbuddy [buddy]="buddyToEdit" (buddiesUpdated)="updateBuddyList($event)"></app-editbuddy>

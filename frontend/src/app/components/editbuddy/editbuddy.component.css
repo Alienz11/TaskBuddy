@@ -1,0 +1,10 @@
+.create{
+    border: 1px solid black;
+    padding:
+    margin-top: 30px;
+    background-color:beige;
+}
+
+.create .prop{
+    border: 10px solid black;
+}
